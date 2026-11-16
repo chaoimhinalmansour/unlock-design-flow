@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UNLOCK 教学流程</title>
+  <link rel="stylesheet" href="../../shared/book.css">
+</head>
+<body>
+  <header class="book-header">
+    <a class="brand" href="../../index.html">UNLOCK</a>
+    <select id="book-select" aria-label="选择 Book"></select>
+    <label class="unit-label"><select id="unit-select" aria-label="选择单元"></select></label>
+    <div class="header-actions">
+      <button id="vocabulary-open" type="button">单元 WORDLIST</button>
+      <select id="mode-select" aria-label="选择教学顺序">
+        <option value="school">校内两节课</option>
+        <option value="original">原书顺序</option>
+      </select>
+      <div class="track-switch" role="group" aria-label="分册">
+        <button data-track="RW" type="button">RW</button><button data-track="LS" type="button">LS</button>
+      </div>
+    </div>
+  </header>
+  <nav class="flow-nav" aria-label="流程导航">
+    <div><button id="pan-prev" type="button">上一模块</button><button id="pan-next" type="button">下一模块</button></div>
+    <div id="lesson-shortcuts"></div>
+  </nav>
+  <main id="canvas-frame"><div id="timeline-scroll" hidden></div></main>
+  <dialog id="node-detail" class="book-detail" aria-labelledby="detail-title">
+    <div class="detail-heading">
+      <div><p id="detail-context"></p><h1 id="detail-title"></h1></div>
+      <div class="detail-actions">
+        <button id="detail-return" hidden type="button">返回</button>
+        <button id="detail-prev" type="button">上一项</button>
+        <button id="detail-next" type="button">下一项</button>
+        <button id="detail-close" type="button">关闭</button>
+      </div>
+    </div>
+    <div class="detail-tabs" role="group" aria-label="查看内容">
+      <button data-view="logic" type="button">教学逻辑</button>
+      <button data-view="content" type="button">题目与内容</button>
+      <button data-view="pages" type="button">原书页</button>
+    </div>
+    <div id="detail-body" class="detail-body"></div>
+  </dialog>
+  <dialog id="page-viewer" class="page-viewer" aria-labelledby="page-caption">
+    <header><strong id="page-caption"></strong>
+      <div><button id="page-prev" type="button">上一页</button><button id="page-next" type="button">下一页</button><button id="page-fit" type="button">放大</button><button id="page-close" type="button">关闭原页</button></div>
+    </header>
+    <div class="page-scroll"><img id="page-image" alt="教材原页"></div>
+  </dialog>
+  <div id="view-status" class="sr-only" aria-live="polite"></div>
+  <script src="data.js"></script>
+  
+  <script src="../../shared/lesson-words.js"></script>
+  <script src="../../shared/book.js"></script>
+  <script src="../../shared/ordered-unit.js"></script>
+</body>
+</html>

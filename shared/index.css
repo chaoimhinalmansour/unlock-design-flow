@@ -1,0 +1,32 @@
+
+:root{color-scheme:light;font-family:"Microsoft YaHei","Segoe UI",sans-serif;background:#f5f6f6;color:#263434}
+*{box-sizing:border-box}
+body{margin:0}
+main{max-width:1020px;margin:auto;padding:34px 28px 60px}
+h1{font-size:34px;line-height:1.25;margin:0 0 10px}
+h2{font-size:20px;margin:0 0 9px}
+p{line-height:1.65;margin:0}
+header p{font-size:14px;color:#4b5e5c}
+.rule-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:24px 0}
+.rule-grid section{background:white;border:1px solid #dbe3df;border-top:3px solid #5a806f;border-radius:5px;padding:13px 14px}
+.rule-grid h2{font-size:15px}
+.rule-grid p{font-size:13px;color:#485854}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+nav a{background:white;border:1px solid #d3dfd9;border-radius:4px;padding:7px 13px}
+a{color:#1d5743;text-underline-offset:3px}
+a:focus-visible{outline:2px solid #1b5a45;outline-offset:3px}
+main>section{margin:24px 0}
+table{width:100%;border-collapse:collapse;background:white}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #e3e8e5;font-size:13px;vertical-align:middle}
+thead th{background:#324941;color:white;font-weight:600}
+tbody th{white-space:nowrap;font-weight:600}
+td small{display:block;color:#4d6159;font-size:11px;margin-top:4px}
+@media(max-width:650px){
+ main{padding:22px 10px 42px}
+ h1{font-size:26px}
+ .rule-grid{grid-template-columns:1fr;margin:14px 0;gap:7px}
+ .rule-grid section{padding:8px 10px}
+ .rule-grid h2{margin:0 0 3px}
+ td,th{padding:7px 4px;font-size:11px}
+ td small{font-size:10px}
+}

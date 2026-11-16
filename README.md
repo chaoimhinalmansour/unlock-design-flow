@@ -1,2 +1,7 @@
-# unlock-design-flow
-UNLOCK 教学流程与逐课词汇安排
+# UNLOCK 教学流程
+
+按校内两节课安排查看 Book 1 至 5 的 LS 和 RW。每节开头列出本节 WORDLIST 词条，任务中的 GLOSSARY 随对应活动出现。第二节末按本分册的 WORDLIST 查漏，固定听写沿用这张表。
+
+在单元页切换「校内两节课」和「原书顺序」。点词条可查看原书页码、本单元的教材位置和逐词短练习。公开网页用教材页码定位，原书全文和图片可查阅自己的教材。词汇安排用于备课和核对覆盖。
+
+直接打开 `index.html`，或通过 GitHub Pages 打开网页。页面使用静态 HTML、CSS 和 JavaScript。
