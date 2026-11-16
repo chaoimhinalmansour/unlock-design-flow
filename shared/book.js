@@ -156,7 +156,7 @@
     const teaching = e.teachingReferences || [];
     const references = teaching.map(r=>'<div class="teaching-reference">'+link(r.entry,r.label+' '+pagesLabel(entry(r.entry).pages))+
       '<small>'+author(r.basis)+'</small>'+(r.note?'<p>'+author(r.note)+'</p>':'')+'</div>').join('');
-    const vocab = c.wordPlan.filter(w=>w.need?.entry===e.id||w.revisit?.entry===e.id);
+    const vocab = c.wordPlan.filter(w=>w.need?.entry===e.id||w.revisit?.entry===e.id||w.practice?.entry===e.id);
     return (vocab.length?'<section><h2>在这里遇到的 WORDLIST 词</h2>'+vocab.map(w=>link('word:'+w.id,w.term)).join('')+'</section>':'')+
       (references?'<section class="related-teaching"><h2>相关教材讲解</h2>'+references+'</section>':'');
   }
@@ -272,7 +272,7 @@
     document.querySelectorAll('button[data-track]').forEach(button =>
       button.setAttribute('aria-pressed', String(button.dataset.track===track)));
     $('lesson-shortcuts').innerHTML = mode==='school' ? [
-      ['study::lesson1','定位第 1 节'],['study::lesson2','定位第 2 节'],['study::review','定位课末查漏'],
+      ['study::lesson1','定位第 1 节'],['study::lesson2','定位第 2 节'],['study::review','定位单元查漏'],
     ].map(([id,label])=>'<button type="button" data-go-entry="'+id+'">'+label+'</button>').join('') : '';
   }
 

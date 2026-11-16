@@ -70,7 +70,7 @@ function render(){
   const e=idx.entries[m.entry],lesson=courseLesson(m);
   const lessonLabel=api.mode==='school'&&lesson?'第 '+lesson+' 节':'';
   const label=lessonLabel;
-  const stage=m.stage==='review'?m.newCount+' 词待核对':m.stage?m.newCount+' 个首次学练':'';
+  const stage=m.stage?.startsWith('review')?m.newCount+' 词待核对':m.stage?m.newCount+' 个首次学练':'';
   const start=m.stage==='lesson1'||m.stage==='lesson2';
   let lastParent='';const sections=m.phaseIds.map(id=>{const section=idx.entries[id],parent=section.parentPhase;const band=parent&&parent!==lastParent?'<div class="ordered-parent-phase">'+E(parent)+'</div>':'';lastParent=parent||lastParent;return band+'<section class="ordered-section" data-section-id="'+E(id)+'"><button type="button" class="ordered-section-title" data-open-entry="'+E(id)+'">'+E(section.title)+'</button><div class="ordered-section-items">'+section.items.map(entryCard).join('')+'</div></section>'}).join('');
   return '<li class="ordered-module'+(m.custom?' ordered-module-custom':'')+'" data-module="'+E(m.id)+'"'+(start?' data-lesson-start="'+lesson+'"':'')+' style="margin-right:'+(m.flowGutter-48)+'px"><p class="ordered-lesson">'+E(label)+'</p><div class="ordered-module-head"><button type="button" data-open-entry="'+E(m.entry)+'" class="ordered-module-open"><strong>'+E(m.label)+'</strong>'+(m.mainContents.length?'<span>'+m.mainContents.map(id=>E(idx.entries[id].title)).join(' / ')+'</span>':'')+(m.pages.length?'<small>'+E(pageText(e))+'</small>':(stage?'<small>'+E(stage)+'</small>':''))+'</button></div><div class="ordered-module-dot" aria-hidden="true">'+(m.custom?'自研':++ordinal)+'</div><div class="ordered-module-body">'+m.mainContents.map(id=>mainReading(idx.entries[id])).join('')+sections+'</div></li>';
